@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace BilletSystemDLL
 {
-     class Bil
+    public class Bil
     {
+        public string Nummerplade { get; set; }
+        public DateTime Dato;
+
+        public Bil(string nummerplade)
+        {
+            this.Nummerplade = nummerplade;
+        }
+
+        public int Pris()
+        {
+            return 240;
+        }
+
+        public string Køretøj()
+        {
+            return "Bil";
+        }
     }
 }
