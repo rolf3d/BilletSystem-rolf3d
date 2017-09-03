@@ -24,7 +24,7 @@ namespace BilletSystemDLL
         //public string Nummerplade { get; set; }
         //public DateTime Dato;
 
-        public Bil(string nummerplade)
+        public Bil(string nummerplade): base(nummerplade)
         {
             this.Nummerplade = nummerplade;
         }

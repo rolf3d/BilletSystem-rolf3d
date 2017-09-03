@@ -11,6 +11,11 @@ namespace BilletSystemDLL
 
         public override string Nummerplade { get; set; }
 
+        public MC(string nummerplade) : base(nummerplade)
+        {
+            this.Nummerplade = nummerplade;
+        }
+
         public override int Pris()
         {
             return 125;

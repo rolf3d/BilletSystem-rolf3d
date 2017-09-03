@@ -21,7 +21,7 @@ namespace BilletSystemDLL.Tests
         public void PrisTest()
         {
             // Arrange
-            var mc = new MC();
+            var mc = new MC("344");
             // Act
             int pris = mc.Pris();
 
@@ -33,13 +33,24 @@ namespace BilletSystemDLL.Tests
         public void KøretøjTest()
         {
             // Arrange
-            var mc01 = new MC();
+            var mc01 = new MC("378");
 
             // Act
             string køretøjsslags = mc01.KøretøjType();
 
             // Assert
             Assert.AreEqual("MC", køretøjsslags);
+        }
+
+        [TestMethod()]
+        public void NummerpladeTest()
+        {
+            // Arrange
+            MC mortercykel01 = new MC("7465787yu");
+            // Act
+            string nummerpladelængde = mortercykel01.Nummerplade;
+            // Assert
+            Assert.AreEqual(9,nummerpladelængde);
         }
     }
 }

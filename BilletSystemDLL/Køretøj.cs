@@ -10,6 +10,16 @@ namespace BilletSystemDLL
     {
         
         public abstract string Nummerplade { get; set; }
+
+        public Køretøj(string nummerplade)
+        {
+            this.Nummerplade = nummerplade;
+            if (Nummerplade.Length > 7)
+            {
+                throw new ArgumentException("Nummerpladen indenholder for mange tegn! ");
+            }
+        }
+
         public DateTime Dato;
 
         public virtual int Pris()
