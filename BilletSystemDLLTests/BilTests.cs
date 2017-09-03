@@ -63,7 +63,7 @@ namespace BilletSystemDLL.Tests
             int hvilkenrabat = weekendRabat01.WeekendRabatter();
             // Assert
             // Bilen har brobizz og køre over en søndag
-            Assert.AreEqual(190,hvilkenrabat);
+            Assert.AreEqual(310,hvilkenrabat);
         }
     }
 }

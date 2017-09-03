@@ -11,6 +11,7 @@ namespace BilletSystemDLL
 
         public override string Nummerplade { get; set; }
         public override bool Brobizz { get; set; }
+        public int McPriserKr = 210;
 
         public MC(string nummerplade,bool brobizz,DateTime Dato) : base(nummerplade,brobizz,Dato)
         {
@@ -21,16 +22,18 @@ namespace BilletSystemDLL
         {
             if (Brobizz)
             {
-                Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
-                return 125 - (125 / 100 * 5);
-               
+                //Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
+                //return 125 - (125 / 100 * 5);
+                Console.WriteLine("Du har brobizz så prísen er fast 73 for Motorcykler,-");
+                return 73;
+
             }
-            return 125;
+            return McPriserKr;
         }
 
         public override string KøretøjType()
         {
-            return "MC";
+            return "Øresund MC";
         }
 
         // Inden arv
