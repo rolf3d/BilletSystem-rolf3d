@@ -10,9 +10,19 @@ namespace BilletSystemDLL
     {
         
         public abstract string Nummerplade { get; set; }
+        public abstract bool Brobizz { get; set; }
 
-        public Køretøj(string nummerplade)
+        public Køretøj(string nummerplade,bool brobizz)
         {
+            this.Brobizz = brobizz;
+            if (Brobizz)
+            {
+                Console.WriteLine("Dette køretøj har Brobizz! ");
+            }
+            else
+            {
+                Console.WriteLine("Dette køretøj har ikke Brobizz, desværre! ");
+            }
             this.Nummerplade = nummerplade;
             if (Nummerplade.Length > 7)
             {
@@ -24,12 +34,18 @@ namespace BilletSystemDLL
 
         public virtual int Pris()
         {
+            
             return 100;
         }
 
         public virtual string KøretøjType()
         {
             return "Base Køretøj";
+        }
+
+        public virtual bool BrobizzFunk()
+        {
+            return false;
         }
     }
 }

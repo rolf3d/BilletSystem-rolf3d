@@ -12,6 +12,9 @@ namespace BilletSystem
         static void Main(string[] args)
         {
             Console.WriteLine("I Biletsystem");
+
+
+            
             Console.ReadLine();
         }
     }

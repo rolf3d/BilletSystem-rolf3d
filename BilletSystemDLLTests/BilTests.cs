@@ -21,7 +21,7 @@ namespace BilletSystemDLL.Tests
         public void PrisTest()
         {
             // Arrange
-            var bilpris = new Bil("2345");
+            var bilpris = new Bil("2345",true);
             //Act
             int pris = bilpris.Pris();
             //Assert
@@ -32,13 +32,26 @@ namespace BilletSystemDLL.Tests
         public void KøretøjTest()
         {
             // Arrange
-            var køretøj = new Bil("234");
+            var køretøj = new Bil("234",true);
 
             // Act
             string køretøjslags = køretøj.KøretøjType();
 
             // Assert
             Assert.AreEqual("Bil",køretøjslags);
+        }
+
+        [TestMethod()]
+        public void BrobizzTestBil()
+        {
+            // Arrange
+            var bilmedbrobizz = new Bil("832huio", false);
+
+            // Act
+            bool brobizztestresult = bilmedbrobizz.Brobizz;
+
+            // Assert
+            Assert.AreEqual(true, brobizztestresult);
         }
     }
 }

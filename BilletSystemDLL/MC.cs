@@ -10,14 +10,21 @@ namespace BilletSystemDLL
     {
 
         public override string Nummerplade { get; set; }
+        public override bool Brobizz { get; set; }
 
-        public MC(string nummerplade) : base(nummerplade)
+        public MC(string nummerplade,bool brobizz) : base(nummerplade,brobizz)
         {
             this.Nummerplade = nummerplade;
         }
 
         public override int Pris()
         {
+            if (Brobizz)
+            {
+                Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
+                return 125 - (125 / 100 * 5);
+               
+            }
             return 125;
         }
 
