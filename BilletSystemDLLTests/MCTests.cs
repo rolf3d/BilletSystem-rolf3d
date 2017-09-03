@@ -21,7 +21,7 @@ namespace BilletSystemDLL.Tests
         public void PrisTest()
         {
             // Arrange
-            var mc = new MC("876");
+            var mc = new MC();
             // Act
             int pris = mc.Pris();
 
@@ -33,10 +33,10 @@ namespace BilletSystemDLL.Tests
         public void KøretøjTest()
         {
             // Arrange
-            var mc01 = new MC("987");
+            var mc01 = new MC();
 
             // Act
-            string køretøjsslags = mc01.Køretøj();
+            string køretøjsslags = mc01.KøretøjType();
 
             // Assert
             Assert.AreEqual("MC", køretøjsslags);

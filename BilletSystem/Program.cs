@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BilletSystem
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("I Biletsystem");
+            Console.ReadLine();
         }
     }
+
+   
 }
