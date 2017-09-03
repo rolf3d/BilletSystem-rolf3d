@@ -6,24 +6,38 @@ using System.Threading.Tasks;
 
 namespace BilletSystemDLL
 {
-    public class Bil
+    public class Bil : Køretøj
     {
-        public string Nummerplade { get; set; }
-        public DateTime Dato;
+
+        public override string Nummerplade { get; set; }
+
+        public override int Pris()
+        {
+            return 240;
+        }
+
+        public override string KøretøjType()
+        {
+            return "Bil";
+        }
+
+        //public string Nummerplade { get; set; }
+        //public DateTime Dato;
 
         public Bil(string nummerplade)
         {
             this.Nummerplade = nummerplade;
         }
 
-        public int Pris()
-        {
-            return 240;
-        }
+        //public int Pris()
+        //{
+        //    return 240;
+        //}
 
-        public string Køretøj()
-        {
-            return "Bil";
-        }
+        //public string Køretøj()
+        //{
+        //    return "Bil";
+        //}
+
     }
 }

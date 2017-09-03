@@ -35,7 +35,7 @@ namespace BilletSystemDLL.Tests
             var køretøj = new Bil("234");
 
             // Act
-            string køretøjslags = køretøj.Køretøj();
+            string køretøjslags = køretøj.KøretøjType();
 
             // Assert
             Assert.AreEqual("Bil",køretøjslags);
