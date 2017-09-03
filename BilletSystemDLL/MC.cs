@@ -13,12 +13,12 @@ namespace BilletSystemDLL
         public override bool Brobizz { get; set; }
         public int McPriserKr = 210;
 
-        public MC(string nummerplade,bool brobizz,DateTime Dato) : base(nummerplade,brobizz,Dato)
+        public MC(string nummerplade,bool brobizz,DateTime Dato, bool turøresund, bool turstorebælt) : base(nummerplade,brobizz,Dato,turøresund,turstorebælt)
         {
             this.Nummerplade = nummerplade;
         }
 
-        public override int Pris()
+        public override int PrisStorebælt()
         {
             if (Brobizz)
             {

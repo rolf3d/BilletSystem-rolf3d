@@ -21,34 +21,44 @@ namespace BilletSystemDLL
         //public string Nummerplade { get; set; }
         //public DateTime Dato;
 
-        public Bil(string nummerplade,bool brobizz,DateTime Dato): base(nummerplade,brobizz,Dato)
+        public Bil(string nummerplade,bool brobizz,DateTime Dato,bool turøresund,bool turstorebælt): base(nummerplade,brobizz,Dato,turøresund,turstorebælt)
         {
             this.Nummerplade = nummerplade;
             
         }
 
-        public override int Pris()
-        {
+        //public override int PrisStorebælt()
+        //{
+        //    if (Brobizz)
+        //    {
+        //        //Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
+        //        //return bilpriserkr - (bilpriserkr / 100 * 5);
+        //        Console.WriteLine("Du har brobizz så prísen er fast 161,-");
+        //        return 161;
+        //    }
+        //    else
+        //    {
+        //        return bilpriserkr;
+        //    }
             
-            if (Brobizz)
-            {
-                //Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
-                //return bilpriserkr - (bilpriserkr / 100 * 5);
-                Console.WriteLine("Du har brobizz så prísen er fast 161,-");
-                return 161;
-            }
-            else
-            {
-                return bilpriserkr;
-            }
+        //}
 
-
-            
-        }
+        //public override int PrisØresundbron()
+        //{
+        //    if (Brobizz)
+        //    {
+        //        Console.WriteLine("Du har Brobizz, og skal betale 161,- ");
+        //        return 161;
+        //    }
+        //    else
+        //    {
+        //        return bilpriserkr;
+        //    }
+        //}
 
         public override string KøretøjType()
         {
-            return "Øresund Bil";
+            return "Bil";
         }
 
 

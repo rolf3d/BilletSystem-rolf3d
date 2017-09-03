@@ -21,9 +21,9 @@ namespace BilletSystemDLL.Tests
         public void PrisTest()
         {
             // Arrange
-            var bilpris = new Bil("2345", true, new DateTime(2017,08,28));
+            var bilpris = new Bil("2345", true, new DateTime(2017,08,28),false,true);
             //Act
-            int pris = bilpris.Pris();
+            int pris = bilpris.PrisStorebælt();
             //Assert
             Assert.AreEqual(240, pris);
         }
@@ -32,7 +32,7 @@ namespace BilletSystemDLL.Tests
         public void KøretøjTest()
         {
             // Arrange
-            var køretøj = new Bil("234", true,new DateTime(2017,08,29));
+            var køretøj = new Bil("234", true,new DateTime(2017,08,29),true,true);
 
             // Act
             string køretøjslags = køretøj.KøretøjType();
@@ -45,7 +45,7 @@ namespace BilletSystemDLL.Tests
         public void BrobizzTestBil()
         {
             // Arrange
-            var bilmedbrobizz = new Bil("832huio", false, new DateTime(2017,09,01));
+            var bilmedbrobizz = new Bil("832huio", false, new DateTime(2017,09,01),true,false);
 
             // Act
             bool brobizztestresult = bilmedbrobizz.Brobizz;
@@ -58,7 +58,7 @@ namespace BilletSystemDLL.Tests
         public void WeekendRabatterTest()
         {
             // Arrange
-            var weekendRabat01 = new Bil("2345",true,new DateTime(2017,09,03));
+            var weekendRabat01 = new Bil("2345",true,new DateTime(2017,09,03),false,false);
             // Act
             int hvilkenrabat = weekendRabat01.WeekendRabatter();
             // Assert
