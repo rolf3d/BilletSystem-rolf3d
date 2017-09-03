@@ -11,9 +11,10 @@ namespace BilletSystemDLL
         
         public abstract string Nummerplade { get; set; }
         public abstract bool Brobizz { get; set; }
-
-        public Køretøj(string nummerplade,bool brobizz)
+        public DateTime Dato;
+        public Køretøj(string nummerplade,bool brobizz,DateTime dato)
         {
+            this.Dato = dato;
             this.Brobizz = brobizz;
             if (Brobizz)
             {
@@ -30,7 +31,7 @@ namespace BilletSystemDLL
             }
         }
 
-        public DateTime Dato;
+        
 
         public virtual int Pris()
         {

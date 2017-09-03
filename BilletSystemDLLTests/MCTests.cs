@@ -21,7 +21,7 @@ namespace BilletSystemDLL.Tests
         public void PrisTestMC()
         {
             // Arrange
-            var mc = new MC("344",false);
+            var mc = new MC("344",false,new DateTime(2017,08,22));
             // Act
             int pris = mc.Pris();
 
@@ -33,7 +33,7 @@ namespace BilletSystemDLL.Tests
         public void KøretøjTest()
         {
             // Arrange
-            var mc01 = new MC("378",false);
+            var mc01 = new MC("378",false,new DateTime(2017,08,15));
 
             // Act
             string køretøjsslags = mc01.KøretøjType();
@@ -46,7 +46,7 @@ namespace BilletSystemDLL.Tests
         public void NummerpladeTest()
         {
             // Arrange
-            MC mortercykel01 = new MC("7465787yu", false);
+            MC mortercykel01 = new MC("7465787yu", false,new DateTime(2017,09,02));
             // Act
             string nummerpladelængde = mortercykel01.Nummerplade;
             // Assert
@@ -57,7 +57,7 @@ namespace BilletSystemDLL.Tests
         public void BrobizzTestMC()
         {
             // Arrange
-            var mcmedbrobizz = new MC("mc123", true);
+            var mcmedbrobizz = new MC("mc123", true,new DateTime(2017,09,02));
 
             // Act
             bool brobizztestresult = mcmedbrobizz.Brobizz;

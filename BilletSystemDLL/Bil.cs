@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BilletSystemDLL
 {
-    public class Bil : Køretøj
+    public class Bil : Køretøj , IWeekendRabat
     {
 
         public override string Nummerplade { get; set; }
@@ -17,7 +17,7 @@ namespace BilletSystemDLL
         //public string Nummerplade { get; set; }
         //public DateTime Dato;
 
-        public Bil(string nummerplade,bool brobizz): base(nummerplade,brobizz)
+        public Bil(string nummerplade,bool brobizz,DateTime Dato): base(nummerplade,brobizz,Dato)
         {
             this.Nummerplade = nummerplade;
             
@@ -25,6 +25,7 @@ namespace BilletSystemDLL
 
         public override int Pris()
         {
+            
             if (Brobizz)
             {
                 Console.WriteLine("Du har Brobizz, og for 5% i rabat! ");
@@ -34,6 +35,8 @@ namespace BilletSystemDLL
             {
                 return 240;
             }
+
+
             
         }
 
@@ -56,6 +59,28 @@ namespace BilletSystemDLL
         public override string ToString()
         {
             return this.Brobizz.ToString() + Nummerplade.ToString();
+        }
+
+        /// <summary>
+        /// Til interface
+        /// </summary>
+        public int WeekendRabat { get; set; }
+        public int WeekendRabatter()
+        {
+            List<DayOfWeek> RabatDage = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
+
+            if (RabatDage.Contains(DayOfWeek.Saturday) || RabatDage.Contains(DayOfWeek.Sunday))
+            {
+                Console.WriteLine("Du for rabat fordi det er weekend! ");
+                if (Brobizz)
+                {
+                    return 240 - (240 / 100 * 5) - (240/100 * 20);
+                }
+                return 240 - (240 / 100 * 20);
+
+            }
+            return 240;
+
         }
     }
 }
