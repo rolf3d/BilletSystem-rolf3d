@@ -14,16 +14,21 @@ namespace BilletSystem
         {
             //List<Bil> billiste = new List<Bil>();
 
-            List<Kunde> kundelste = new List<Kunde>();
-            Bil bil01 = new Bil("AB123",true,new DateTime(2017,09,03),true,true);
+            List<Kunde> kunde_Peter = new List<Kunde>();
+
+            Bil kundebil01 = new Bil("123", true, DateTime.Now, true, true);
+            
+
+
+            Console.WriteLine();
+            //Bil bil01 = new Bil("AB123",true,new DateTime(2017,09,03),true,true);
             
 
             //billiste.Add(bil01);
-            Console.WriteLine(bil01.Nummerplade);
             Console.WriteLine("I Biletsystem");
             
 
-            Console.WriteLine(kundelste);
+            
 
             Console.ReadLine();
         }

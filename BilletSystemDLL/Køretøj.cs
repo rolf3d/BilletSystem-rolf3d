@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BilletSystemDLL
 {
-    public abstract class Køretøj
+    public abstract class Køretøj : ITure
     {
         
         public abstract string Nummerplade { get; set; }
@@ -91,5 +91,6 @@ namespace BilletSystemDLL
         //{
         //    return false;
         //}
+        public abstract int Pris();
     }
 }

@@ -8,13 +8,11 @@ namespace BilletSystemDLL
 {
     public class Kunde
     {
-        List<IEnumerable<Bil>> Ture = new List<IEnumerable<Bil>>();
+        List<ITure> turene = new List<ITure>();
 
         public Kunde()
         {
-            Bil kundebil01 = new Bil("123", true, DateTime.Now, true, true);
-
-            Ture = new List<IEnumerable<Bil>>();
+            
             
         }
 
