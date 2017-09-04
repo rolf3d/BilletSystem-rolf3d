@@ -8,9 +8,22 @@ namespace BilletSystemDLL
 {
     public class Kunde
     {
-        Bil kundebil01 = new Bil("123",true,DateTime.Now, true,true);
+        List<IEnumerable<Bil>> Ture = new List<IEnumerable<Bil>>();
 
-        List<Bil> Ture = new List<Bil>();
+        public Kunde()
+        {
+            Bil kundebil01 = new Bil("123", true, DateTime.Now, true, true);
+
+            Ture = new List<IEnumerable<Bil>>();
+            
+        }
+
         
+        //public override string ToString()
+        //{
+        //    return this.kundebil01.Nummerplade + kundebil01.Brobizz + kundebil01.KøretøjType() +
+        //           kundebil01.TurStorebælt + kundebil01.TurØresund;
+        //}
+
     }
 }
