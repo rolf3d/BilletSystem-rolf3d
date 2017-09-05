@@ -8,13 +8,14 @@ namespace BilletSystemDLL
 {
     public abstract class Køretøj : ITure
     {
-        
+
         public abstract string Nummerplade { get; set; }
         public abstract bool Brobizz { get; set; }
+
         public DateTime Dato;
         public bool TurØresund;
         public bool TurStorebælt;
-        public Køretøj(string nummerplade,bool brobizz,DateTime dato,bool turøresund,bool turstorebælt)
+        public Køretøj(string nummerplade, bool brobizz, DateTime dato, bool turøresund, bool turstorebælt)
         {
             this.TurØresund = turøresund;
             this.TurStorebælt = turstorebælt;
@@ -35,51 +36,62 @@ namespace BilletSystemDLL
             }
         }
 
-        
 
+        public abstract int PrisStoreBælt();
         public virtual int PrisStorebælt()
         {
-            if (KøretøjType().Contains("Bil"))
+            if (TurStorebælt)
             {
-                Console.WriteLine("Bil Storebælt");
-                return 240;
-            }
-            if (KøretøjType().Contains("Bil") && Brobizz)
-            {
-                Console.WriteLine("Bil med Brobizz Storebælt");
-                return 230;
-            }
-            if (KøretøjType().Contains("MC") && Brobizz)
-            {
-                Console.WriteLine("MC med Brobizz StoreBælt");
-                return 120;
 
+                if (KøretøjType().Contains("Bil") && Brobizz == false)
+                {
+                    Console.WriteLine("Bil Storebælt");
+                    return 240;
+                }
+                if (KøretøjType().Contains("Bil") && Brobizz)
+                {
+                    Console.WriteLine("Bil med Brobizz Storebælt");
+                    return 230;
+                }
+
+                if (KøretøjType().Contains("MC") && Brobizz)
+                {
+                    Console.WriteLine("MC med Brobizz StoreBælt");
+                    return 120;
+
+                }
+                if (KøretøjType().Contains("MC") && Brobizz == false)
+                {
+                    Console.WriteLine("MC uden Brobiz StoreBælt");
+                    return 125;
+                }
+
+                Console.WriteLine("MC Storebælt");
             }
-            Console.WriteLine("MC Storebælt");
-            return 125;
+            Console.WriteLine("Du har ikke kørt over storebælt: " + KøretøjType());
+            return 0;
 
         }
 
         public virtual int PrisØresundbron()
         {
-            if (KøretøjType().Contains("Bil"))
+            if (TurØresund)
             {
-                Console.WriteLine("Øresund Bil");
-                return 410;
-            }
-            if (KøretøjType().Contains("Bil") && Brobizz)
-            {
-                Console.WriteLine("Øresund Bil med Brobizz");
-                return 161;
-            }
-            if (KøretøjType().Contains("MC") && Brobizz)
-            {
-                Console.WriteLine("Øresund MC med Brobizz");
-                return 73;
+                if (KøretøjType().Contains("Bil") && Brobizz == false)
+                {
+                    Console.WriteLine("Øresund Bil");
+                    return 410;
+                }
+                if (KøretøjType().Contains("Bil") && Brobizz)
+                {
+                    Console.WriteLine("Øresund Bil med Brobizz");
+                    return 161;
+                }
 
+                Console.WriteLine("Øresund Bil");
             }
-            Console.WriteLine("Øresund MC");
-            return 210;
+
+            return 0;
         }
 
         public virtual string KøretøjType()
@@ -87,10 +99,6 @@ namespace BilletSystemDLL
             return "Base Køretøj";
         }
 
-        //public virtual bool BrobizzFunk()
-        //{
-        //    return false;
-        //}
-        public abstract int Pris();
+
     }
 }

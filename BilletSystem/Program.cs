@@ -13,10 +13,29 @@ namespace BilletSystem
         static void Main(string[] args)
         {
             //List<Bil> billiste = new List<Bil>();
+            Bil kundebilbent = new Bil("23", true, DateTime.Now, false, false);
+            Bil kundebilhans = new Bil("987", true, DateTime.Now, true, false);
 
-            List<Kunde> kunde_Peter = new List<Kunde>();
+            List<Kunde> kundeliste = new List<Kunde>();
+            Kunde kunde1 = new Kunde("Bent",kundebilbent);
+            Kunde kunde2 = new Kunde("Hans",kundebilhans);
 
-            Bil kundebil01 = new Bil("123", true, DateTime.Now, true, true);
+            
+
+            kundeliste.Add(kunde1);
+            kundeliste.Add(kunde2);
+
+            foreach (var kunder in kundeliste)
+            {
+                Console.WriteLine(kunder.Fornavn);
+            }
+            
+
+            
+            kunde1.Totalberegner();
+
+            Console.WriteLine("Totalberegner fra kunde klassen");
+            Console.WriteLine(kunde1.Totalberegner() + " Total pris for kunde " + kunde1.Fornavn);
             
 
 

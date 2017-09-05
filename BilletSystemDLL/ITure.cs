@@ -8,6 +8,9 @@ namespace BilletSystemDLL
 {
     interface ITure
     {
-        int Pris();
+        //int Pris();
+        int PrisStorebælt();
+
+        int PrisØresundbron();
     }
 }

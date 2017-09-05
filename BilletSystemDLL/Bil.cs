@@ -12,14 +12,8 @@ namespace BilletSystemDLL
         public override string Nummerplade { get; set; }
         public override bool Brobizz { get; set; }
 
-        private int bilpriserkr = 410;
-
-
-
-
-
-        //public string Nummerplade { get; set; }
-        //public DateTime Dato;
+       // private int bilpriserkr = 410;
+       
 
         public Bil(string nummerplade,bool brobizz,DateTime Dato,bool turøresund,bool turstorebælt): base(nummerplade,brobizz,Dato,turøresund,turstorebælt)
         {
@@ -61,16 +55,12 @@ namespace BilletSystemDLL
             return "Bil";
         }
 
+        public override int PrisStoreBælt()
+        {
+            throw new NotImplementedException();
+        }
 
-        //public int Pris()
-        //{
-        //    return 240;
-        //}
 
-        //public string Køretøj()
-        //{
-        //    return "Bil";
-        //}
 
         public override string ToString()
         {

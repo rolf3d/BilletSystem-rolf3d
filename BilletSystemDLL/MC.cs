@@ -36,6 +36,33 @@ namespace BilletSystemDLL
             return "Øresund MC";
         }
 
+        //public override int Pris()
+        //{
+        //    return 50;
+        //}
+
+        public override int PrisStoreBælt()
+        {
+            if (KøretøjType().Contains("Bil"))
+            {
+                Console.WriteLine("Øresund Bil");
+                return 410;
+            }
+            if (KøretøjType().Contains("Bil") && Brobizz)
+            {
+                Console.WriteLine("Øresund Bil med Brobizz");
+                return 161;
+            }
+            if (KøretøjType().Contains("MC") && Brobizz)
+            {
+                Console.WriteLine("Øresund MC med Brobizz");
+                return 73;
+
+            }
+            Console.WriteLine("Øresund MC");
+            return 210;
+        }
+
         // Inden arv
 
         //public string Nummerplade { get; set; }
